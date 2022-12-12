@@ -1,0 +1,1 @@
+# gbc-journal-app
