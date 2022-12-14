@@ -232,26 +232,12 @@ main .date input[type="date"] {
   color: var(--color-primary);
 }
 
-main .add-note > div {
-  background: var(--color-secondary);
-  padding: var(--card-padding);
-  border-radius: var(--card-border-radius);
-  margin-top: 1rem;
-  box-shadow: var(--box-shadow);
-  transition: all 300ms ease;
-}
-
-main .add-note > div:hover {
-  box-shadow: none;
-}
-
 main .new-btn {
-  position: absolute;
-  bottom: 3.3rem;
-  right: 0;
-  border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
+  border-radius: var(--card-border-radius);
+  width: 100%;
+  height: 3rem;
+  display: block;
+  margin-top: 2rem;
   padding-top: 0.3rem;
   background: var(--color-info-dark);
   color: var(--color-background);
@@ -261,6 +247,46 @@ main .new-btn {
 main .new-btn:hover {
   background: var(--color-primary);
 }
+
+main .add-note {
+  background: var(--color-secondary);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  margin-top: 1rem;
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+}
+
+main .add-note:hover {
+  box-shadow: none;
+}
+
+main .add-note .details h3 {
+  font-size: 1.3rem;
+}
+
+main .add-note .details p {
+  margin: 1rem 0;
+}
+
+main .add-note .bottom-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+}
+
+main .add-note .bottom-content .note-settings span {
+  margin-left: 0.3rem;
+  font-size: 1.5rem;
+  color: var(--color-info-dark);
+}
+
+main .add-note .bottom-content .note-settings span:hover {
+  color: var(--color-primary);
+}
+
 /* ---------------------- End of main ---------------------- */
 
 /* ---------------------- Start of right top ---------------------- */
@@ -542,15 +568,13 @@ main .new-btn:hover {
     padding: 0 2rem;
   }
 
-  main .add-note {
-    margin: 2rem 0 0 0;
-    width: 100%;
+  main .new-btn {
+    margin-top: 2rem;
   }
 
-  main .new-btn {
-    position: absolute;
-    bottom: -20.2rem;
-    right: 2rem;
+  main .add-note {
+    margin: 1rem 0 0 0;
+    width: 100%;
   }
   /* End of main */
 
