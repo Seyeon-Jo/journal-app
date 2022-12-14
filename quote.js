@@ -1,6 +1,6 @@
-const quoteText = document.querySelector(".quote"),
-  authorName = document.querySelector(".author .name"),
-  quoteBtn = document.querySelector(".new-quote");
+const quoteText = document.querySelector(".quote");
+const authorName = document.querySelector(".author .name");
+const quoteBtn = document.querySelector(".new-quote");
 
 // random quote function
 function randomQuote() {

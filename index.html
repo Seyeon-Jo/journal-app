@@ -72,6 +72,9 @@
           <div class="note">Hello</div>
           <div class="note">Hello</div>
         </div>
+        <button class="new-btn">
+          <span class="material-icons-sharp"> add </span>
+        </button>
       </main>
       <!----------------------- End of main ----------------------->
 
@@ -82,10 +85,6 @@
           <button id="menu-btn">
             <span class="material-icons-sharp"> menu </span>
           </button>
-          <div class="theme-toggler">
-            <span class="material-icons-sharp active"> light_mode </span>
-            <span class="material-icons-sharp"> dark_mode </span>
-          </div>
           <div class="greet">
             <p>Hey,<b>Seyeon</b></p>
           </div>
@@ -97,8 +96,13 @@
 
         <!------------------ Start of user ------------------>
         <div class="user">
-          <div class="user-photo">
-            <img src="images/profile.png" alt="" />
+          <div class="user-profile">
+            <div class="user-photo">
+              <img src="images/profile.png" alt="" />
+            </div>
+            <div class="user-close" id="user-close-btn">
+              <span class="material-icons-sharp"> close </span>
+            </div>
           </div>
           <div class="user-sidebar">
             <a href="#">
@@ -155,6 +159,7 @@
 
       <!----------------------- End of right ----------------------->
     </div>
+    <script src="index.js"></script>
     <script src="quote.js"></script>
   </body>
 </html>

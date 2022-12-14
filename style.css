@@ -10,6 +10,7 @@
   --color-info-light: #dce1eb;
   --color-light: #faf0e9;
   --color-dark-variant: #4e4c59;
+  --color-shadow: #decfc3;
 
   --card-border-radius: 2rem;
   --border-radius-1: 0.4rem;
@@ -211,6 +212,7 @@ aside .sidebar a:hover span {
 /* ---------------------- Start of main ---------------------- */
 main {
   margin-top: 1.4rem;
+  position: relative;
 }
 
 main h1 {
@@ -230,12 +232,6 @@ main .date input[type="date"] {
   color: var(--color-primary);
 }
 
-main .add-note {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.6rem;
-}
-
 main .add-note > div {
   background: var(--color-secondary);
   padding: var(--card-padding);
@@ -247,6 +243,23 @@ main .add-note > div {
 
 main .add-note > div:hover {
   box-shadow: none;
+}
+
+main .new-btn {
+  position: absolute;
+  bottom: 3.3rem;
+  right: 0;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding-top: 0.3rem;
+  background: var(--color-info-dark);
+  color: var(--color-background);
+  cursor: pointer;
+}
+
+main .new-btn:hover {
+  background: var(--color-primary);
 }
 /* ---------------------- End of main ---------------------- */
 
@@ -265,32 +278,6 @@ main .add-note > div:hover {
   display: none;
 }
 
-.right .theme-toggler {
-  background: var(--color-secondary);
-  color: var(--color-primary);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 1.6rem;
-  width: 4.2rem;
-  cursor: pointer;
-  border-radius: var(--border-radius-1);
-}
-
-.right .theme-toggler span {
-  font-size: 1.2rem;
-  width: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.right .theme-toggler span.active {
-  background: var(--color-primary);
-  color: var(--color-secondary);
-  border-radius: var(--border-radius-1);
-}
-
 .right .top .greet p {
   font-size: 1.2rem;
   font-family: pacifico, serif;
@@ -307,13 +294,22 @@ main .add-note > div:hover {
   top: 3.3rem;
 }
 
-.user .user-photo {
+.user .user-profile {
+  display: flex;
+}
+
+.user .user-profile .user-photo {
   display: block;
   margin: 2rem auto 1rem;
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
   overflow: hidden;
+}
+
+.user .user-profile .user-close {
+  display: none;
+  cursor: pointer;
 }
 
 .user .user-sidebar a {
@@ -424,3 +420,170 @@ main .add-note > div:hover {
   pointer-events: none;
 }
 /* ---------------------- End of right quote ---------------------- */
+
+/* --------------- Start of media queries for lg tablet --------------- */
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 94%;
+    grid-template-columns: 7rem auto 14rem;
+  }
+  /* End of container */
+
+  aside .logo h2 {
+    display: none;
+  }
+
+  aside .sidebar h3 {
+    display: none;
+  }
+
+  aside .sidebar {
+    width: 5.6rem;
+  }
+
+  aside .sidebar a:last-child {
+    position: relative;
+    margin-top: 1.8rem;
+  }
+  /* End of aside */
+}
+/* --------------- End of media queries for lg tablet --------------- */
+
+/* --------------- Start of media queries for sm tablet --------------- */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+  /* End of container */
+
+  aside {
+    position: fixed;
+    left: 0;
+    background: var(--color-secondary);
+    width: 18rem;
+    z-index: 3;
+    box-shadow: 1rem 3rem 4rem var(--color-shadow);
+    height: 100vh;
+    padding-right: var(--card-padding);
+    display: none;
+  }
+
+  aside .logo {
+    margin-left: 1rem;
+  }
+
+  aside .logo h2 {
+    display: inline;
+  }
+
+  aside .sidebar h3 {
+    display: inline;
+  }
+
+  aside .sidebar {
+    width: 100%;
+  }
+
+  aside .sidebar a {
+    width: 100%;
+    height: 3.7rem;
+  }
+
+  aside .sidebar a:last-child {
+    position: absolute;
+    bottom: 3.3rem;
+  }
+
+  aside .close {
+    display: inline-block;
+    cursor: pointer;
+  }
+  /* End of aside */
+
+  .user {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: var(--color-secondary);
+    width: 17rem;
+    z-index: 3;
+    box-shadow: 1rem 3rem 4rem var(--color-shadow);
+    height: 100vh;
+    padding: 0 1.5rem;
+    display: none;
+  }
+
+  .user .user-profile .user-close {
+    display: inline-block;
+  }
+  /* End of user */
+
+  main {
+    position: relative;
+    padding: 0 2rem;
+  }
+
+  main .add-note {
+    margin: 2rem 0 0 0;
+    width: 100%;
+  }
+
+  main .new-btn {
+    position: absolute;
+    bottom: -20.2rem;
+    right: 2rem;
+  }
+  /* End of main */
+
+  .right {
+    width: 94%;
+    margin: 0 auto 4rem;
+  }
+
+  .right .top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    padding: 0 0.8rem;
+    height: 4.6rem;
+    background-color: var(--color-background);
+    width: 100%;
+    margin: 0;
+    z-index: 2;
+    box-shadow: 0 0.5rem 0.8rem var(--color-shadow);
+  }
+
+  .right .top .greet {
+    display: none;
+  }
+
+  .right .top #menu-btn {
+    display: inline-block;
+    background: transparent;
+    cursor: pointer;
+    color: var(--color-primary);
+    position: absolute;
+    left: 1rem;
+  }
+
+  .right .top #menu-btn span {
+    font-size: 2rem;
+  }
+
+  .right .top #user-btn {
+    display: inline-block;
+    background: transparent;
+    cursor: pointer;
+    color: var(--color-primary);
+    position: absolute;
+    right: 1rem;
+    top: 1.3rem;
+  }
+  .right .top #user-btn span {
+    font-size: 2rem;
+  }
+  /* End of right */
+}
+/* --------------- End of media queries for sm tablet --------------- */
