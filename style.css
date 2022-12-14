@@ -222,15 +222,12 @@ main h1 {
 
 main .date {
   display: inline-block;
-  background: var(--color-secondary);
-  border-radius: var(--border-radius-1);
-  margin: 2.27rem 0 1rem;
-  padding: 0.5rem 1.6rem;
+  margin: 2.27rem 0 0.8rem;
 }
 
-main .date input[type="date"] {
-  background: transparent;
-  color: var(--color-primary);
+main .date p {
+  font-size: 1.6rem;
+  font-family: pacifico, serif;
 }
 
 main .new-btn {
