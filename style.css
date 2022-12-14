@@ -558,7 +558,7 @@ main .popup-box .popup .content form button:hover {
 @media screen and (max-width: 1200px) {
   .container {
     width: 94%;
-    grid-template-columns: 7rem auto 5.6rem;
+    grid-template-columns: 7rem auto 14rem;
   }
   /* End of container */
 
@@ -580,7 +580,7 @@ main .popup-box .popup .content form button:hover {
   }
   /* End of aside */
 
-  .user .user-profile .user-photo {
+  /* .user .user-profile .user-photo {
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
@@ -598,12 +598,12 @@ main .popup-box .popup .content form button:hover {
   .user .quote-of-the-day {
     display: none;
   }
-  /* End of aside */
+  End of user */
 }
 /* --------------- End of media queries for lg tablet --------------- */
 
 /* --------------- Start of media queries for sm tablet --------------- */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 847px) {
   .container {
     width: 100%;
     grid-template-columns: 1fr;
