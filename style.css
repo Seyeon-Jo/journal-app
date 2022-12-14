@@ -117,6 +117,7 @@ b {
 /* ---------------------- Start of aside ---------------------- */
 aside {
   height: 100vh;
+  z-index: 4;
 }
 
 aside .top {
@@ -261,6 +262,11 @@ main .add-note:hover {
   box-shadow: none;
 }
 
+main .add-note .details {
+  max-height: 10rem;
+  overflow-y: auto;
+}
+
 main .add-note .details h3 {
   font-size: 1.3rem;
 }
@@ -287,6 +293,119 @@ main .add-note .bottom-content .note-settings span:hover {
   color: var(--color-primary);
 }
 
+main .popup-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+main .popup-box .popup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  max-width: 400px;
+  width: 100%;
+  border-radius: var(--border-radius-1);
+  transform: translate(-50%, -50%);
+  justify-content: center;
+}
+
+main .popup-box,
+.popup-box .popup {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+main .popup-box.show,
+.popup-box.show .popup {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+main .popup-box .popup .content {
+  width: calc(100% - 15px);
+  background: var(--color-secondary);
+  border-radius: var(--border-radius-1);
+}
+
+main .popup-box .popup .content header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .popup-box .popup .content header p {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+main .popup-box .popup .content header span {
+  color: var(--color-info-dark);
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+main .popup-box .popup .content header span:hover {
+  color: var(--color-primary);
+}
+
+main .popup-box .popup .content form {
+  margin: 1rem 1.5rem;
+}
+
+main .popup-box .popup .content form .row {
+  margin-bottom: 1rem;
+}
+
+main .popup-box .popup .content form .row label {
+  display: block;
+  font-size: 1rem;
+  margin: 0.7rem 0;
+}
+
+main .popup-box .popup .content form :where(input, textarea) {
+  width: 100%;
+  height: 3rem;
+  outline: none;
+  padding: 0 1rem;
+  border: 1px solid var(--color-info-dark);
+  border-radius: var(--border-radius-1);
+  font-family: sono, sans-serif;
+}
+
+main .popup-box .popup .content form textarea {
+  height: 8rem;
+  resize: none;
+  padding: 1rem;
+}
+
+main .popup-box .popup .content form button {
+  width: 100%;
+  height: 3rem;
+  font-family: sono, sans-serif;
+  font-size: 1rem;
+  background: var(--color-info-dark);
+  outline: none;
+  border-radius: var(--border-radius-1);
+  color: var(--color-light);
+}
+
+main .popup-box .popup .content form button:hover {
+  background: var(--color-primary);
+}
 /* ---------------------- End of main ---------------------- */
 
 /* ---------------------- Start of right top ---------------------- */
@@ -352,19 +471,6 @@ main .add-note .bottom-content .note-settings span:hover {
 .user .user-sidebar a span {
   font-size: 1.6rem;
   transition: all 300ms ease;
-}
-
-.user .user-sidebar a.active {
-  background: var(--color-light);
-  color: var(--color-primary);
-  margin-left: 0;
-}
-
-.user .user-sidebar a.active:before {
-  content: "";
-  width: 6px;
-  height: 100%;
-  background: var(--color-primary);
 }
 
 .user .user-sidebar a.active span {
