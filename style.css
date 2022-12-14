@@ -224,7 +224,7 @@ main .date {
   display: inline-block;
   background: var(--color-secondary);
   border-radius: var(--border-radius-1);
-  margin-top: 2.27rem;
+  margin: 2.27rem 0 1rem;
   padding: 0.5rem 1.6rem;
 }
 
@@ -238,7 +238,7 @@ main .new-btn {
   width: 100%;
   height: 3rem;
   display: block;
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding-top: 0.3rem;
   background: var(--color-info-dark);
   color: var(--color-background);
@@ -697,7 +697,7 @@ main .popup-box .popup .content form button:hover {
   }
 
   main .new-btn {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 
   main .add-note {

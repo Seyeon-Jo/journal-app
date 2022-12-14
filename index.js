@@ -46,17 +46,6 @@ quoteBtn.addEventListener("click", randomQuote);
 //--------------- End of random quote generator ---------------//
 
 //----------------- Start of show current date -----------------//
-//----------------- End of show current date -----------------//
-
-//----------------- Start of adding note -----------------//
-const newBtn = document.querySelector(".new-btn");
-const popupBox = document.querySelector(".popup-box");
-const popupTitle = popupBox.querySelector("header p");
-const closeIcon = popupBox.querySelector("header span");
-const titleTag = popupBox.querySelector(".row input");
-const descTag = popupBox.querySelector(".row textarea");
-const addBtn = popupBox.querySelector(".content button");
-
 const months = [
   "Jan",
   "Feb",
@@ -71,6 +60,39 @@ const months = [
   "Nov",
   "Dec",
 ];
+
+let currentDate = document.getElementById("current-date");
+let today = new Date();
+let month = months[today.getMonth()];
+let day = `${today.getDate() < 10 ? "0" : ""}${today.getDate()}`;
+let year = today.getFullYear();
+
+currentDate.textContent = `${month} ${day}, ${year}`;
+//----------------- End of show current date -----------------//
+
+//----------------- Start of adding note -----------------//
+const newBtn = document.querySelector(".new-btn");
+const popupBox = document.querySelector(".popup-box");
+const popupTitle = popupBox.querySelector("header p");
+const closeIcon = popupBox.querySelector("header span");
+const titleTag = popupBox.querySelector(".row input");
+const descTag = popupBox.querySelector(".row textarea");
+const addBtn = popupBox.querySelector(".content button");
+
+// const months = [
+//   "Jan",
+//   "Feb",
+//   "Mar",
+//   "Apr",
+//   "May",
+//   "Jun",
+//   "Jul",
+//   "Aug",
+//   "Sep",
+//   "Oct",
+//   "Nov",
+//   "Dec",
+// ];
 // getting localstorage notes if exist and parsing them to js object else passing an empty array to notes
 const notes = JSON.parse(localStorage.getItem("notes") || "[]");
 let isUpdate = false,
@@ -106,7 +128,7 @@ function showNotes() {
                         </div>
                     </div>
                 </li>`;
-    newBtn.insertAdjacentHTML("afterend", liTag);
+    newBtn.insertAdjacentHTML("beforebegin", liTag);
   });
 }
 showNotes();
