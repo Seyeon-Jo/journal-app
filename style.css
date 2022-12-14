@@ -235,7 +235,7 @@ main .new-btn {
   width: 100%;
   height: 3rem;
   display: block;
-  margin-top: 1rem;
+  margin: 2rem 0 3rem;
   padding-top: 0.3rem;
   background: var(--color-info-dark);
   color: var(--color-background);
