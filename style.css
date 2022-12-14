@@ -17,7 +17,7 @@
   --border-radius-2: 0.8rem;
   --border-radius-3: 1.2rem;
 
-  --card-padding: 1.8rem;
+  --card-padding: 1.5rem;
   --padding-1: 1.2rem;
 
   --box-shadow: 0 1rem 1rem #e5d6cb;
@@ -459,7 +459,7 @@ main .new-btn:hover {
 
   aside {
     position: fixed;
-    left: 0;
+    left: -100%;
     background: var(--color-secondary);
     width: 18rem;
     z-index: 3;
@@ -467,6 +467,13 @@ main .new-btn:hover {
     height: 100vh;
     padding-right: var(--card-padding);
     display: none;
+    animation: showMenu 400ms ease forwards;
+  }
+
+  @keyframes showMenu {
+    to {
+      left: 0;
+    }
   }
 
   aside .logo {
@@ -503,7 +510,7 @@ main .new-btn:hover {
 
   .user {
     position: fixed;
-    right: 0;
+    right: -100%;
     top: 0;
     background: var(--color-secondary);
     width: 17rem;
@@ -512,10 +519,21 @@ main .new-btn:hover {
     height: 100vh;
     padding: 0 1.5rem;
     display: none;
+    animation: showUser 400ms ease forwards;
+  }
+
+  @keyframes showUser {
+    to {
+      right: 0;
+    }
   }
 
   .user .user-profile .user-close {
     display: inline-block;
+    background: transparent;
+    position: absolute;
+    right: 1rem;
+    top: 2rem;
   }
   /* End of user */
 
