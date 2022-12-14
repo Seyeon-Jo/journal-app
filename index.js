@@ -45,6 +45,9 @@ function randomQuote() {
 quoteBtn.addEventListener("click", randomQuote);
 //--------------- End of random quote generator ---------------//
 
+//----------------- Start of show current date -----------------//
+//----------------- End of show current date -----------------//
+
 //----------------- Start of adding note -----------------//
 const newBtn = document.querySelector(".new-btn");
 const popupBox = document.querySelector(".popup-box");
@@ -135,14 +138,16 @@ addBtn.addEventListener("click", (e) => {
   if (noteTitle || noteDesc) {
     // getting month, day, year from the current date
     let dateObj = new Date(),
-      month = months[dateObj.getMonth()],
-      day = dateObj.getDate(),
-      year = dateObj.getFullYear();
+      time = dateObj.toLocaleTimeString();
+    // month = months[dateObj.getMonth()],
+    // day = dateObj.getDate(),
+    // year = dateObj.getFullYear();
 
     let noteInfo = {
       title: noteTitle,
       description: noteDesc,
-      date: `${month} ${day}, ${year}`,
+      date: `${time}`,
+      //date: `${month} ${day}, ${year}`,
     };
 
     if (!isUpdate) {
