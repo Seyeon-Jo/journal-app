@@ -558,7 +558,7 @@ main .popup-box .popup .content form button:hover {
 @media screen and (max-width: 1200px) {
   .container {
     width: 94%;
-    grid-template-columns: 7rem auto 14rem;
+    grid-template-columns: 7rem auto 5.6rem;
   }
   /* End of container */
 
@@ -577,6 +577,26 @@ main .popup-box .popup .content form button:hover {
   aside .sidebar a:last-child {
     position: relative;
     margin-top: 1.8rem;
+  }
+  /* End of aside */
+
+  .user .user-profile .user-photo {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .user .user-sidebar h3 {
+    display: none;
+  }
+
+  .user .user-sidebar span {
+    align-items: center;
+  }
+
+  .user .quote-of-the-day {
+    display: none;
   }
   /* End of aside */
 }
