@@ -186,3 +186,141 @@ addBtn.addEventListener("click", (e) => {
   }
 });
 //----------------- End of adding note -----------------//
+
+/*//--------------- Start of showing-hiding sidebar menu ---------------//
+
+const sideMenu = document.querySelector("aside");
+const menuBtn = document.querySelector("#menu-btn");
+const closeBtn = document.querySelector("#close-btn");
+const userSideMenu = document.querySelector(".user");
+const userBtn = document.querySelector("#user-btn");
+const userCloseBtn = document.querySelector("#user-close-btn");
+
+menuBtn.addEventListener("click", () => {
+  sideMenu.classList.add("visible");
+});
+
+closeBtn.addEventListener("click", () => {
+  sideMenu.classList.remove("visible");
+});
+
+userBtn.addEventListener("click", () => {
+  userSideMenu.classList.add("visible");
+});
+
+userCloseBtn.addEventListener("click", () => {
+  userSideMenu.classList.remove("visible");
+});
+
+//--------------- End of showing-hiding sidebar menu ---------------//
+
+//--------------- Start of random quote generator ---------------//
+
+const quoteText = document.querySelector(".quote");
+const authorName = document.querySelector(".author .name");
+const quoteBtn = document.querySelector(".new-quote");
+
+async function getRandomQuote() {
+  quoteBtn.innerText = "Loading Quote...";
+  try {
+    const res = await fetch("https://api.quotable.io/random");
+    const result = await res.json();
+    console.log(result);
+    quoteText.innerText = result.content;
+    authorName.innerText = result.author;
+    quoteBtn.innerText = "New Quote";
+  } catch (error) {
+    console.error(error);
+    quoteBtn.innerText = "Error Occurred, Try Again";
+  }
+}
+
+quoteBtn.addEventListener("click", getRandomQuote);
+
+//--------------- End of random quote generator ---------------//
+
+//----------------- Start of show current date -----------------//
+
+const currentDate = document.getElementById("current-date");
+const today = new Date();
+const formattedDate = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "2-digit",
+  year: "numeric",
+}).format(today);
+currentDate.textContent = formattedDate;
+
+//----------------- End of show current date -----------------//
+
+//----------------- Start of adding note -----------------//
+
+const newBtn = document.querySelector(".new-btn");
+const popupBox = document.querySelector(".popup-box");
+const popupTitle = popupBox.querySelector("header p");
+const closeIcon = popupBox.querySelector("header span");
+const titleTag = popupBox.querySelector(".row input");
+const descTag = popupBox.querySelector(".row textarea");
+const addBtn = popupBox.querySelector(".content button");
+const notesList = document.querySelector(".notes-list");
+
+const notes = JSON.parse(localStorage.getItem("notes")) || [];
+
+function showNotes() {
+  notesList.innerHTML = "";
+  notes.forEach((note, index) => {
+    const { title, description, date } = note;
+    const noteItem = (
+      <li class="add-note">
+        {" "}
+        <div class="details">
+          {" "}
+          <h3>${title}</h3> <p>${description}</p>{" "}
+        </div>{" "}
+        <div class="bottom-content">
+          {" "}
+          <small>${date}</small>{" "}
+          <div class="note-settings">
+            {" "}
+            <span onclick="updateNote(${index})" class="material-icons-sharp">
+              {" "}
+              edit{" "}
+            </span>{" "}
+            <span onclick="deleteNote(${index})" class="material-icons-sharp">
+              {" "}
+              delete{" "}
+            </span>{" "}
+          </div>{" "}
+        </div>{" "}
+      </li>
+    );
+    notesList.insertAdjacentHTML("beforeend", noteItem);
+  });
+}
+
+function deleteNote(index) {
+  if (confirm("Are you sure you want to delete this note?")) {
+    notes.splice(index, 1);
+    localStorage.setItem("notes", JSON.stringify(notes));
+    showNotes();
+  }
+}
+
+function updateNote(index) {
+  const { title, description } = notes[index];
+  titleTag.value = title;
+  descTag.value = description;
+  addBtn;
+}
+
+// update note function
+function updateNotes(updateId, noteTitle, noteDesc) {
+  notes[updateId] = {
+    title: noteTitle,
+    description: noteDesc,
+    date: notes[updateId].date,
+  };
+  localStorage.setItem("notes", JSON.stringify(notes));
+  showNotes();
+}
+
+//----------------- End of adding note -----------------//*/
